@@ -24,7 +24,7 @@ no formato de script para então utilizar a ferramenta pylint.
 Assim, o seguinte comando foi usado para rodar o script com pylint
 
 ```sh
-pylint <nome_arquivo.py>
+pylint nome_arquivo.py
 ```
 
 Na primeira vez que o comando foi utilizado, não foi obtido um score aceitavel:
