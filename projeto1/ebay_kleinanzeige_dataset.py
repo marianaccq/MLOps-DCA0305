@@ -1,7 +1,7 @@
 '''
 Autora: Mariana Queiroz
 Data: Nov. 2021
-Este projeto tem o objetivo de limpar e analisar do conjunto
+Este projeto tem o objetivo de limpar e analisar o conjunto
 de dados eBay Kleinanzeige, de acordo com as instruções
 do curso da plataforma Dataquest.io.
 '''
