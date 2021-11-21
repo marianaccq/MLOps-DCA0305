@@ -8,9 +8,13 @@ Ivanovitch Silva na disciplina DCA0305 - PROJETO DE SISTEMAS BASEADOS EM APRENDI
 Para isso, foi utilizada a biblioteca **pandas** para tratar os dados e a biblioteca **pylint** para analisar o padrão de código. 
 Os seguintes comandos foram utilizados para instalar as bibliotecas:
 
+```sh 
 pip install pandas
+```
 
+```sh
 pip install pylint
+```
 
 É importante ressaltar que foi utilizado o ambiente da ferramente Anaconda para rodar esses programas.
 
@@ -19,9 +23,11 @@ no formato de script para então utilizar a ferramenta pylint.
 
 Assim, o seguinte comando foi usado para rodar o script com pylint
 
-pylint <nome_arquivo.py>
+```sh
+pylint nome_arquivo.py
+```
 
-Na primeira vez que o comando foi utilzido, não foi obtido um score aceitavel:
+Na primeira vez que o comando foi utilizado, não foi obtido um score aceitavel:
 
 ![image](https://user-images.githubusercontent.com/20773821/141049396-7fcaca18-836f-4df3-ae07-e9a04d9bb227.png)
 
