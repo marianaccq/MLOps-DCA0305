@@ -13,9 +13,10 @@ import pandas as pd
 import matplotlib.style as style
 import matplotlib.pyplot as plt
 
+
 # configurando o logging
 logging.basicConfig(
-    filename='./results.log',
+    filename='./test_results.log',
     level=logging.INFO,
     filemode='w',
     format='%(name)s - %(levelname)s - %(message)s')
@@ -54,8 +55,19 @@ plt.plot(EURO_TO_REAL['Time'], EURO_TO_REAL['BR_real'])
 #plt.show()
 
 # calculando a média móvel de cada país
-EURO_TO_DOLAR['rolling_mean'] = EURO_TO_DOLAR['US_dollar'].rolling(30).mean()
-EURO_TO_REAL['rolling_mean'] = EURO_TO_REAL['BR_real'].rolling(30).mean()
+def rolling_mean(dataframe, coin, window):
+    """Calculates the moving average of the currency
+    value against the euro according to the moving window.
+
+    Args:
+      df (DataFrame): The DataFrame that contains the datas.
+      coin (str): The corresponding coin.
+      window (int): number of moving window
+    """
+    dataframe['rolling_mean'] = dataframe[coin].rolling(window).mean()
+
+rolling_mean(EURO_TO_DOLAR, 'US_dollar', 30)
+rolling_mean(EURO_TO_REAL, 'BR_real', 30)
 
 # definindo o estilo dos gráficos
 style.use('fivethirtyeight')
