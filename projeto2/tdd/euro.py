@@ -29,7 +29,7 @@ def read_data(file_path):
       file_path (str): file path to read.
 
     Return:
-        df (DataFrame): returns the file read as a dataframe.
+        df_file (DataFrame): returns the file read as a dataframe.
     """
     try:
         df_file = pd.read_csv(file_path)
@@ -118,7 +118,7 @@ plt.plot(BOLSONARO['Time'], BOLSONARO['rolling_mean'],
          label="BOLSONARO", color='#191970')
 plt.legend()
 
-#definindo titulo e sub-titulo
+#definindo titulo e subtitulo
 plt.text(731516.0, 7.7, '            Variação do EURO-REAL (2003-2021)',
          fontsize=14, weight='bold')
 plt.text(731516.0, 7.1,
