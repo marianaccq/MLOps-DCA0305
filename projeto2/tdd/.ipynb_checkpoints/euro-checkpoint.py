@@ -16,16 +16,28 @@ import matplotlib.pyplot as plt
 
 # configurando o logging
 logging.basicConfig(
-    filename='./test_results.log',
+    filename='./results.log',
     level=logging.INFO,
     filemode='w',
     format='%(name)s - %(levelname)s - %(message)s')
 
 # lendo csv
-try:
-    EXCHANGE_RATES = pd.read_csv("euro-daily-hist_1999_2020.csv")
-except: # pylint: disable=bare-except
-    logging.error("We were not able to find the archive")
+def read_data(file_path):
+    """Read data from csv.
+
+    Args:
+      file_path (str): file path to read.
+
+    Return:
+        df (DataFrame): returns the file read as a dataframe.
+    """
+    try:
+        df_file = pd.read_csv(file_path)
+        return df_file
+    except: # pylint: disable=bare-except
+        logging.error("We were not able to find %s", file_path)
+
+EXCHANGE_RATES = read_data("~/Documentos/MLOps-DCA0305/projeto2/euro-daily-hist_1999_2020.csv")
 
 # tratando dados: renomeando colunas e convertendo para data
 EXCHANGE_RATES.rename(columns={'[US dollar ]': 'US_dollar',
